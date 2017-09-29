@@ -36,10 +36,10 @@
                 <!-- ======================================================================================= -->
                 <section class="title-slide">
                     <h2>Свежий взгляд <br> на разработку API</h2>
-                    <p>Анатолий Притульский</p>
+                    <p>Притульский Анатолий</p>
                     <p>
                         <small>
-                            <a href="http://travellizy.com">Travellizy Developer</a>
+                            <a href="http://travellizy.com">PHP Developer из Travellizy </a>
                         </small>
                     </p>
                     <p>
@@ -80,7 +80,6 @@
 
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>О работе</h2>
                     <a href="http://travellizy.com" target="_blank">
                         <img src="./images/logo.png" alt="" />
                     </a>
@@ -90,9 +89,9 @@
                         а также рестораны, концерты и другие виды досуга.
                     </p>
                     <ul>
-                        <li>Стартап</li>
-                        <li>PHP 7.1</li>
-                        <li>Не в продакшене</li>
+                        <li class="fragment">Стартап</li>
+                        <li class="fragment">PHP 7.1</li>
+                        <li class="fragment">Не в продакшене</li>
                     </ul>
                 </section>
                 <!-- ======================================================================================= -->
@@ -114,20 +113,20 @@
                 <section>
                     <h2>Минусы REST API</h2>
                     <ul>
-                        <li style="margin-bottom: 15px;">Не существует какого-то единого стандарта, который бы полностью описывал REST.</li>
-                        <li style="margin-bottom: 15px;">
+                        <li class="fragment" style="margin-bottom: 15px;">Не существует какого-то единого стандарта, который бы полностью описывал REST.</li>
+                        <li class="fragment" style="margin-bottom: 15px;">
                             Словарь REST поддерживается не полностью
                             <small style="display:block; margin-left: 55px;">(в основном браузеры поддерживают GET и POST).</small>
                         </li>
-                        <li style="margin-bottom: 15px;">Множество запросов для получения необходимых данных:
+                        <li class="fragment" style="margin-bottom: 15px;">Множество запросов для получения необходимых данных:
                             <ul style="margin-top: 0">
                                 <li>GET /books/:id</li>
                                 <li>GET /books/:id/comments</li>
                                 <li>GET /books/:id/author</li>
                             </ul>
                         </li>
-                        <li style="margin-bottom: 15px;">Почти RESTful</li>
-                        <li>...</li>
+                        <li class="fragment" style="margin-bottom: 15px;">Почти RESTful</li>
+                        <li class="fragment">...</li>
                     </ul>
                 </section>
                 <!-- ======================================================================================= -->
@@ -192,6 +191,20 @@
 
                 <!-- ======================================================================================= -->
                 <section>
+                    <h2>Плюсы GraphQL</h2>
+                    <ul>
+                        <li class="fragment" style="margin-bottom: 15px;">Facebook используют GraphQL с 2012 года.</li>
+                        <li class="fragment" style="margin-bottom: 15px;">GraphQL решает реальные задачи.</li>
+                        <li class="fragment" style="margin-bottom: 15px;">Просто и очевидно.</li>
+                        <li class="fragment" style="margin-bottom: 15px;">Четкий и ясный API между backend и frontend.</li>
+                        <li class="fragment" style="margin-bottom: 15px;">Уменьшает затраты на коммуникации.</li>
+                        <li class="fragment" style="margin-bottom: 15px;">Все больше компаний переходит на GraphQL.</li>
+                    </ul>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
                     <h2>Языковая поддержка GraphQL</h2>
                     <p><a href="http://graphql.org/code/">http://graphql.org/code/</a></p>
                     <ul>
@@ -227,21 +240,7 @@
 
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>Плюсы GraphQL</h2>
-                    <ul>
-                        <li style="margin-bottom: 15px;">Facebook используют GraphQL с 2012 года.</li>
-                        <li style="margin-bottom: 15px;">GraphQL решает реальные задачи.</li>
-                        <li style="margin-bottom: 15px;">Просто и очевидно.</li>
-                        <li style="margin-bottom: 15px;">Четкий и ясный API между backend и frontend.</li>
-                        <li style="margin-bottom: 15px;">Уменьшает затраты на коммуникации.</li>
-                        <li style="margin-bottom: 15px;">Все больше компаний переходит на GraphQL.</li>
-                    </ul>
-                </section>
-                <!-- ======================================================================================= -->
-
-                <!-- ======================================================================================= -->
-                <section>
-                    <h2>GraphQL в действии</h2>
+                    <h2>GraphQL в действии:</h2>
                 </section>
                 <!-- ======================================================================================= -->
 
@@ -280,39 +279,109 @@
                 </section>
                 <!-- ======================================================================================= -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>Пример схемы</h2>
-
+                    <h2>Frameworks</h2>
+                    <ul>
+                        <li><a href="https://github.com/rebing/graphql-laravel" target="_blank">Laravel5</a></li>
+                        <li><a href="https://github.com/tsingsun/yii2-graphql" target="_blank">Yii2</a></li>
+                        <li><a href="https://github.com/overblog/GraphQLBundle" target="_blank">Symfony2</a></li>
+                        <li>...</li>
+                    </ul>
                 </section>
                 <!-- ======================================================================================= -->
 
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>Пример типов</h2>
-
+                    <h2>Getting Started</h2>
+                    <a href="http://webonyx.github.io/graphql-php/getting-started/" target="_blank">http://webonyx.github.io/graphql-php/getting-started/</a>
                 </section>
                 <!-- ======================================================================================= -->
 
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>Первый запрос</h2>
+<pre><code>query {
+  echo(message: "Hello World")
+}
+</code></pre>
+                </section>
+                <!-- ======================================================================================= -->
 
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>Object Type</h2>
+<pre><code>use GraphQL\Type\Definition\ObjectType;
+use GraphQL\Type\Definition\Type;
 
+$queryType = new ObjectType([
+    'name' => 'Query',
+    'fields' => [
+        'echo' => [
+            'type' => Type::string(),
+            'args' => [
+                'message' => Type::nonNull(Type::string()),
+            ],
+            'resolve' => function ($root, $args) {
+                return $root['prefix'] . $args['message'];
+            }
+        ],
+    ],
+]);
+</code></pre>
+                </section>
+                <!-- ======================================================================================= -->
 
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2 style="margin-bottom: 0">Endpoint</h2>
+                    <p style="margin-top: 0">graphql.php</p>
+<pre><code>use GraphQL\GraphQL;
+use GraphQL\Type\Schema;
+
+$schema = new Schema([
+    'query' => $queryType
+]);
+
+$rawInput = file_get_contents('php://input');
+$input = json_decode($rawInput, true);
+$query = $input['query'];
+$variableValues = isset($input['variables']) ? $input['variables'] : null;
+
+try {
+    $rootValue = ['prefix' => 'You said: '];
+    $result = GraphQL::executeQuery($schema, $query, $rootValue, null, $variableValues);
+    $output = $result->toArray();
+} catch (\Exception $e) {
+    $output = [
+        'errors' => [
+            [
+                'message' => $e->getMessage()
+            ]
+        ]
+    ];
+}
+header('Content-Type: application/json');
+echo json_encode($output);
+</code></pre>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>Просмотр</h2>
+<pre><code>php -S localhost:8000 graphql.php
+curl http://localhost:8080 -d '{"query": "query { echo(message: \"Hello World\") }" }'
+</code></pre>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>Результат</h2>
+                    ---
+                </section>
+                <!-- ======================================================================================= -->
 
                 <!-- ======================================================================================= -->
                 <section>
