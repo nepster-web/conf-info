@@ -337,30 +337,23 @@ $queryType = new ObjectType([
                     <h2 style="margin-bottom: 0">Endpoint</h2>
                     <p style="margin-top: 0">graphql.php</p>
 <pre><code>use GraphQL\GraphQL;
-use GraphQL\Type\Schema;
+use GraphQL\Schema;
 
-$schema = new Schema([
-    'query' => $queryType
-]);
+// Request data
+// $query - GET or file_get_contents('php://input')
+// $variables - GET or file_get_contents('php://input')
+// ------------
 
-$rawInput = file_get_contents('php://input');
-$input = json_decode($rawInput, true);
-$query = $input['query'];
-$variableValues = isset($input['variables']) ? $input['variables'] : null;
+$schema = new Schema(['query' => $queryType]);
 
 try {
     $rootValue = ['prefix' => 'You said: '];
-    $result = GraphQL::executeQuery($schema, $query, $rootValue, null, $variableValues);
+    $result = GraphQL::executeAndReturnResult($schema, $query, $rootValue, null, $variables);
     $output = $result->toArray();
 } catch (\Exception $e) {
-    $output = [
-        'errors' => [
-            [
-                'message' => $e->getMessage()
-            ]
-        ]
-    ];
+    $output = ['errors' => [['message' => $e->getMessage()]]];
 }
+
 header('Content-Type: application/json');
 echo json_encode($output);
 </code></pre>
@@ -369,17 +362,34 @@ echo json_encode($output);
 
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>Просмотр</h2>
-<pre><code>php -S localhost:8000 graphql.php
+                    <h2>Проверить</h2>
+<pre><code>php -S localhost:8000 simple1.php
 curl http://localhost:8080 -d '{"query": "query { echo(message: \"Hello World\") }" }'
 </code></pre>
+                    <p>или</p>
+<pre><code>http://localhost/simple1.php?query=query{echo(message:"Hello World")}
+</code></pre>
+
+
+
                 </section>
                 <!-- ======================================================================================= -->
 
                 <!-- ======================================================================================= -->
                 <section>
                     <h2>Результат</h2>
-                    ---
+<pre><code>{
+    "data": {
+        "echo": "You said: Hello World"
+    }
+}</code></pre>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>Примеры</h2>
+                    <a href="https://github.com/nepster-web/conf-info/tree/master/2017/CodeID-GraphQL/demo" target="_blank">https://github.com/nepster-web/conf-info/tree/master/2017/CodeID-GraphQL/demo</a>
                 </section>
                 <!-- ======================================================================================= -->
 
