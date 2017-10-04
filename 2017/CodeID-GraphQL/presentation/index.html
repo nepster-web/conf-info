@@ -111,13 +111,18 @@
 
                 <!-- ======================================================================================= -->
                 <section>
+                    <h3>REST — архитектурная парадигма</h3>
+                    <p>
+                        Representational State Transfer <br> «передача состояния представления»
+                    </p>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
                     <h2>Минусы REST API</h2>
                     <ul>
                         <li class="fragment" style="margin-bottom: 15px;">Не существует какого-то единого стандарта, который бы полностью описывал REST.</li>
-                        <li class="fragment" style="margin-bottom: 15px;">
-                            Словарь REST поддерживается не полностью
-                            <small style="display:block; margin-left: 55px;">(в основном браузеры поддерживают GET и POST).</small>
-                        </li>
                         <li class="fragment" style="margin-bottom: 15px;">Множество запросов для получения необходимых данных:
                             <ul style="margin-top: 0">
                                 <li>GET /books/:id</li>
@@ -133,7 +138,24 @@
 
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>Что делать?</h2>
+                    <h2>RESTful - это сложно</h2>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>Как вариант: JSON API</h2>
+                    <p><a href="http://jsonapi.org">http://jsonapi.org</a></p>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>JSON API</h2>
+                    <ul>
+                        <li>Стандартизирован</li>
+                        <li>Не противоречит REST</li>
+                    </ul>
                 </section>
                 <!-- ======================================================================================= -->
 
@@ -142,7 +164,6 @@
                     <h2>Еще некоторые виды API</h2>
                     <ul>
                         <li>SOAP</li>
-                        <li>JSON API</li>
                         <li>OData</li>
                         <li>GData</li>
                         <li>MQL</li>
@@ -159,7 +180,6 @@
                     <ul>
                         <li>Почти RESTful</li>
                         <li>SOAP</li>
-                        <li>JSON API</li>
                         <li>???</li>
                     </ul>
                 </section>
@@ -205,6 +225,17 @@
 
                 <!-- ======================================================================================= -->
                 <section>
+                    <h2>Существует несколько реализаций GraphQL</h2>
+                    <ul>
+                        <li><a href="http://graphql.org/code/">От Facebook</a></li>
+                        <li><a href="https://apollodata.com/">От Apollo</a></li>
+                        <li><a href="https://github.com/chentsulin/awesome-graphql">Можно поискать еще...</a></li>
+                    </ul>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
                     <h2>Языковая поддержка GraphQL</h2>
                     <p><a href="http://graphql.org/code/">http://graphql.org/code/</a></p>
                     <ul>
@@ -223,7 +254,7 @@
 
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>Who’s using GraphQL?</h2>
+                    <h2>Кто использует GraphQL?</h2>
                     <p><a href="http://graphql.org/users/">http://graphql.org/users/</a></p>
                     <p><a href="https://github.com/APIs-guru/graphql-apis">https://github.com/APIs-guru/graphql-apis</a></p>
                     <p><img src="./images/whos-using-graphql.png" alt=""></p>
@@ -240,7 +271,7 @@
 
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>GraphQL в действии:</h2>
+                    <h2>GraphQL в действии</h2>
                 </section>
                 <!-- ======================================================================================= -->
 
@@ -369,9 +400,6 @@ curl http://localhost:8080 -d '{"query": "query { echo(message: \"Hello World\")
                     <p>или</p>
 <pre><code>http://localhost/simple1.php?query=query{echo(message:"Hello World")}
 </code></pre>
-
-
-
                 </section>
                 <!-- ======================================================================================= -->
 
@@ -396,7 +424,7 @@ curl http://localhost:8080 -d '{"query": "query { echo(message: \"Hello World\")
                 <!-- ======================================================================================= -->
                 <section>
                     <h2>Подробная документация</h2>
-                    <a href="http://webonyx.github.io/graphql-php/" target="_blank">http://webonyx.github.io/graphql-php/</a>
+                    <p><a href="http://webonyx.github.io/graphql-php/" target="_blank">http://webonyx.github.io/graphql-php/</a></p>
                 </section>
                 <!-- ======================================================================================= -->
 
@@ -404,8 +432,23 @@ curl http://localhost:8080 -d '{"query": "query { echo(message: \"Hello World\")
                 <section>
                     <h2>Перевод на русский</h2>
                     <p><a href="http://graphql.org/learn/" target="_blank">http://graphql.org/learn/</a></p>
-                    <img src="./images/curved-arrow.png" style="width: 120px;">
+                    <p><img src="./images/curved-arrow.png" style="width: 120px;"></p>
                     <p><a href="https://github.com/nepster-web/GraphQL-ru" target="_blank">https://github.com/nepster-web/GraphQL-ru</a></p>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h3>An in-browser IDE for <br> exploring GraphQL.</h3>
+                    <p><a href="https://github.com/graphql/graphiql" target="_blank">https://github.com/graphql/graphiql</a></p>
+                    <p><img src="./images/graphiql.png"></p>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h3>Static page generator for documenting GraphQL Schema.</h3>
+                    <p><a href="https://github.com/2fd/graphdoc" target="_blank">https://github.com/2fd/graphdoc</a></p>
                 </section>
                 <!-- ======================================================================================= -->
 
