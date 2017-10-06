@@ -279,29 +279,120 @@
 
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>Пример запроса</h2>
-                    <img src="./images/GraphQL-fields.png" alt="" style="width: 100%">
+                    <h3>Пример запроса</h3>
+<pre><code>{
+  hero {
+    name
+    friends {
+      name
+    }
+  }
+}
+</code></pre>
+                    <h3>Результат</h3>
+<pre><code>{
+  "data": {
+    "hero": {
+      "name": "R2-D2",
+      "friends": [
+        {
+          "name": "Luke Skywalker"
+        },
+        {
+          "name": "Han Solo"
+        },
+        {
+          "name": "Leia Organa"
+        }
+      ]
+    }
+  }
+}
+</code></pre>
+                    <!--<img src="./images/GraphQL-fields.png" alt="" style="width: 100%">-->
                 </section>
                 <!-- ======================================================================================= -->
 
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>Запрос с аргументами</h2>
-                    <img src="./images/GraphQL-arguments.png" alt="" style="width: 100%">
+                    <h3>Запрос с аргументами</h3>
+<pre><code>{
+  human(id: "1000") {
+    name
+    height(unit: FOOT)
+  }
+}
+</code></pre>
+                    <h3>Результат</h3>
+<pre><code>{
+  "data": {
+    "human": {
+      "name": "Luke Skywalker",
+      "height": 5.6430448
+    }
+  }
+}
+</code></pre>
+                    <!--<img src="./images/GraphQL-arguments.png" alt="" style="width: 100%">-->
                 </section>
                 <!-- ======================================================================================= -->
 
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>Параметры отдельно</h2>
-                    <img src="./images/GraphQL-varriables.png" alt="" style="width: 100%">
+                    <h3>Запрос</h3>
+<pre><code>query($id String!) {
+  human(id: $id) {
+    name
+    height(unit: FOOT)
+  }
+}
+</code></pre>
+                    <h3>Параметры</h3>
+<pre><code>{"id": "1000"}</code></pre>
+                    <h3>Результат</h3>
+<pre><code>{
+  "data": {
+    "human": {
+      "name": "Luke Skywalker",
+      "height": 5.6430448
+    }
+  }
+}
+</code></pre>
+                    <!--<img src="./images/GraphQL-varriables.png" alt="" style="width: 100%">-->
                 </section>
                 <!-- ======================================================================================= -->
 
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>Пример мутации</h2>
-                    <img src="./images/GraphQL-mutation.png" alt="" style="width: 100%">
+                    <h3>Пример мутации</h3>
+<pre><code>mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
+  createReview(episode: $ep, review: $review) {
+    stars
+    commentary
+  }
+}
+</code></pre>
+                    <h3>Параметры</h3>
+<pre><code>{
+  "ep": "JEDI",
+  "review": {
+    "stars": 5,
+    "commentary": "This is a great movie!"
+  }
+}
+</code></pre>
+                    <h3>Результат</h3>
+<pre><code>{
+  "data": {
+    "createReview": {
+      "stars": 5,
+      "commentary": "This is a great movie!"
+    }
+  }
+}
+</code></pre>
+                    <!--<img src="./images/GraphQL-mutation.png" alt="" style="width: 100%">-->
                 </section>
                 <!-- ======================================================================================= -->
 
