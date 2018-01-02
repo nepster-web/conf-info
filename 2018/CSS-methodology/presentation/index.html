@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Организация CSS-кода</title>
+
+        <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+
+        <meta name="description" content="Организация CSS-кода">
+        <meta name="author" content="Анатолий Притульский">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="./css/reveal.css">
+        <link rel="stylesheet" href="./css/base.css">
+        <link rel="stylesheet" href="./css/sublime.css">
+        <link rel="stylesheet" href="./css/style.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="./css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+    </head>
+
+    <body>
+
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                <!-- ======================================================================================= -->
+                <section class="title-slide">
+                    <h2>Организация CSS-кода</h2>
+                    <p>Притульский Анатолий</p>
+                    <p>
+                        <small>
+                            <a href="http://travellizy.com">PHP Developer из Travellizy </a>
+                        </small>
+                    </p>
+                    <p>
+                        <a href="https://github.com/nepster-web/conf-info/tree/master/2017/CodeID-GraphQL">
+                            https://github.com/nepster-web/conf-info/tree/master/2017/CodeID-GraphQL
+                        </a>
+                    </p>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>О себе</h2>
+                    <ul>
+                        <li>PHP Developer</li>
+                        <li>Стартапер</li>
+                    </ul>
+                    <div class="list">
+                        <div class="list-item">
+                            <a href="https://habrahabr.ru/users/nepster-web/" target="_blank">
+                                <img src="./images/habrahabr.png" alt="" />
+                                <span>nepster-web</span>
+                            </a>
+                        </div>
+                        <div class="list-item">
+                            <a href="https://github.com/nepster-web" target="_blank">
+                                <img src="./images/github.png" alt="" />
+                                <span>nepster-web</span>
+                            </a>
+                        </div>
+                        <div class="list-item">
+                            <a href="https://www.linkedin.com/in/nepster-web/" target="_blank">
+                                <img src="./images/linkedin.png" alt="" />
+                                <span>nepster-web</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- ======================================================================================= -->
+
+
+                <!-- ======================================================================================= -->
+                <!-- <section>
+                    <h2>Вопросы</h2>
+                    <p>
+                        <a href="#">
+                            url
+                        </a>
+                    </p>
+                </section>
+                -->
+                <!-- ======================================================================================= -->
+            </div>
+
+        </div>
+
+        <script src="./js/head.min.js"></script>
+        <script src="./js/reveal.js"></script>
+
+        <script>
+            Reveal.initialize({
+                width: 1180,
+                height: 800,
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                slideNumber: true,
+                theme: Reveal.getQueryHash().theme,
+                transition: Reveal.getQueryHash().transition || 'none',
+                dependencies: [
+                    { src: './js/dependencies/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: './js/dependencies/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+
+    </body>
+</html>
+

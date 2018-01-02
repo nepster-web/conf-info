@@ -1,0 +1,48 @@
+.reveal blockquote {
+    font-style: normal;
+    background: #feffbb;
+}
+
+.reveal .slide-number {
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    font-size: 200%;
+}
+
+.title-slide h1 {
+    font-size: 2.77em;
+}
+
+.title-slide h2 {
+    font-size: 2.22em;
+}
+
+.title-slide h3 {
+    font-size: 1.11em;
+}
+
+
+.reveal .box {
+    width: 100%;
+
+}
+
+
+
+
+
+.reveal .list {
+    width: 100%;
+    margin: 15px 0 0 15px;
+}
+
+
+.reveal .list-item img {
+    width: 80px;
+    vertical-align: middle;
+}
+
+.reveal .list-item span {
+
+}
