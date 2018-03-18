@@ -152,10 +152,8 @@
 
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>
-                        <a href="https://github.com/nepster-web/UpCss">UpCss</a>
-                        <br>Методология
-                    </h2>
+                    <h2><a href="https://github.com/nepster-web/UpCss">UpCss</a></h2>
+                    <h2>Методология</h2>
                     <img src="images/qr/url_to_UpCss.png" alt="" />
                 </section>
                 <!-- ======================================================================================= -->
@@ -199,7 +197,7 @@
                 <section>
                     <h2>Структура UpCss</h2>
                     <ul>
-                        <li><b>Base</b>: Базовые стили, Конфиги,reset/normalize и др.</li>
+                        <li><b>Base</b>: Базовые стили, конфиги, reset/normalize и др.</li>
                         <li><b>Modules</b>: Независимые переиспользуемые модули.</li>
                         <li><b>Application</b>: Структура текущего приложения.</li>
                     </ul>
@@ -213,7 +211,7 @@
                         <li>Base</li>
                         <li>Modules</li>
                         <li>Application
-                            <ul style="margin-top: 0">
+                            <ul>
                                 <li>sections</li>
                                 <li>layouts</li>
                                 <li>pages</li>
@@ -230,8 +228,8 @@
                         <p>Директория предназначена для хранения глобальных стилей, компонентов framework`а и конфигурации приложения.</p>
                     </section>
                     <section>
+                        <h3 style="text-align: left">Совет:</h3>
                         <p style="text-align: left">
-                            <strong>Совет:</strong> <br>
                             Старайтесь правильно структурировать каталог, разместив в него действительно глобальные стили.
                         </p>
                     </section>
@@ -242,7 +240,7 @@
                                 <ul style="margin-top: 0">
                                     <li>reset или normalize стили</li>
                                     <li>grid</li>
-                                    <li>Стили по умолчанию для: body, a, img, b, string, i, em и др.</li>
+                                    <li>Стили по умолчанию для: body, a, img, b, strong, i, em и др.</li>
                                     <li>Общие классы: .text-left, .text-right, .no-padding, .no-margin и др.</li>
                                 </ul>
                             </li>
@@ -263,25 +261,44 @@
                         </p>
                     </section>
                     <section>
+                        <h3 style="text-align: left">Совет:</h3>
                         <p style="text-align: left">
-                            <strong>Совет:</strong> <br>
                             Старайтесь переиспользовать только абстрактные части проекта.
                         </p>
-                        <h4>Например:</h4>
-                        <ul>
-                            <li>Кнопки</li>
-                            <li>Таблицы</li>
-                            <li>Формы</li>
-                            <li>Пагинация</li>
-                            <li>Уведомления</li>
-                            <li>и др.</li>
+                        <br>
+                        <h4 style="text-align: left">Например:</h4>
+                        <p style="text-align: left">Кнопки, Таблицы, Формы, Пагинация, Уведомления и др.</p>
+                    </section>
+                    <section>
+                        <h3>Рекомендации для своих модулей:</h3>
+                        <ul class="list">
+                            <li class="fragment">
+                                Имя класса должно быть простым, понятным и полностью описывать <br>
+                                модуль, например:
+                                <pre>.btn, .form, .alert, .pagination, .breadcrumbs и др.</pre>
+                            </li>
+                            <li class="fragment">
+                                Подклассы должны дублировать имя модуля, например:
+                                <pre>.btn .btn-main</pre>
+                            </li>
+                            <li class="fragment">
+                                Не рекомендуется использовать длинные имена классов и вложенность
+                                для генерации имен классов, состоящих из более двух знаков "-":
+                                <br>
+                                <pre>Удачный подход: .btn .btn-main .btn-round</pre>
+                                <pre>Избыточный подход: .btn .btn-main-round</pre>
+                            </li>
+                            <li class="fragment">
+                                Запрещено использование <b>!important</b>.
+                            </li>
                         </ul>
                     </section>
                     <section>
-                        <h2>Правила</h2>
-                        <ul>
-                            <li class="fragment">---</li>
-                        </ul>
+                        <h3>Рекомендации для сторонних модулей:</h3>
+                        <p>Так как, сторонние модули разрабатываются без Вашего участия,
+                            основной рекомендацией будет, внимательно подходить к выбору
+                            компонентов для повсеместного использования.
+                        </p>
                     </section>
                 </section>
                 <!-- ======================================================================================= -->
@@ -290,7 +307,43 @@
                 <section>
                     <section>
                         <h2>Application</h2>
-                        <p>Основной каталог приложения, стили которого уникальны в рамках текущего проекта. </p>
+                        <p>
+                            Основной каталог приложения, стили которого
+                            уникальны в рамках текущего проекта.
+                        </p>
+                    </section>
+
+                    <section>
+                        <ul>
+                            <li><h3>Sections</h3></li>
+                            <li><h3>Layouts</h3></li>
+                            <li><h3>Pages</h3></li>
+                        </ul>
+                    </section>
+
+
+                    <section>
+
+                        <ul>
+                            <li>
+                                Каталог layouts и pages - необязательный. Небольшие приложения могут
+                                обходиться общими стилями или компонентами framework`а.
+                            </li>
+                            <li>
+                                Каталог application как и любой другой подкаталог может использовать
+                                любую логическую вложенность других подкаталогов, при условии, если
+                                это не нарушает базовую структуру, например:
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+
+                    </section>
+
+
+
+                    <section>
+
                     </section>
                     <section>
 
@@ -341,7 +394,7 @@
                 <section>
                     <h2>Вопросы</h2>
                     <p>
-                        <a href="https://github.com/nepster-web/conf-info/tree/master/2018/CSS-methodology" style="font-size: 80%">
+                        <a href="https://github.com/nepster-web/conf-info/tree/master/2018/CSS-methodology">
                             https://github.com/nepster-web/conf-info
                         </a>
                         <br>

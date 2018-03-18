@@ -1,3 +1,7 @@
+.reveal .slides pre {
+    padding: 10px;
+}
+
 .reveal blockquote {
     font-style: normal;
     background: #feffbb;
@@ -22,27 +26,35 @@
     font-size: 1.11em;
 }
 
-
 .reveal .box {
     width: 100%;
-
 }
 
+.reveal .slides li {
+    margin-bottom: 15px;
+}
 
-
-
+.reveal .slides li ul {
+    margin-top: 15px;
+}
 
 .reveal .list {
     width: 100%;
     margin: 15px 0 0 15px;
 }
 
+.reveal .list li {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 15px;
+}
+
+.reveal .list li:before {
+    position: absolute;
+    left: 0;
+}
 
 .reveal .list-item img {
     width: 80px;
     vertical-align: middle;
-}
-
-.reveal .list-item span {
-
 }
