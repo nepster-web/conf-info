@@ -1,6 +1,7 @@
 # Odessa Frontend Community
 
-MEETUP в Одессе.
+MEETUP #6 в Одессе.
 
 * URL: http://odessafrontend.com
-* DATE: ??.??.2018
+* EXTRA: http://odessafrontend.com/06/
+* DATE: 27.03.2018
