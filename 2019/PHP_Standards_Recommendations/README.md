@@ -1,7 +1,6 @@
-# ---
+# CodeID – PHP MEETUP
 
----
+Межсезонная встреча для PHP сообщества в Одессе.
 
-* URL: ---
-* EXTRA: ---
-* DATE: ---
+* URL: http://codeid.com.ua
+* DATE: --.--.2019
