@@ -167,7 +167,6 @@
                 </section>
                 <!-- ======================================================================================= -->
 
-
                 <!-- ======================================================================================= -->
                 <section>
                     <section>
@@ -177,10 +176,12 @@
                         <h3 style="color: #9f9f9f">Extended Coding Style Guide</h3>
                     </section>
                     <section>
-                        ---
+                        <h3>PhpStorm Reformat Code</h3>
+                        <img src="images/format-code.gif" alt="" />
                     </section>
                     <section>
-                        ---
+                        <h3>Code Sniffer</h3>
+                        <a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer">https://github.com/FriendsOfPHP/PHP-CS-Fixer</a>
                     </section>
                 </section>
                 <!-- ======================================================================================= -->
@@ -192,10 +193,38 @@
                         <h3>Logger Interface</h3>
                     </section>
                     <section>
-                        ---
+                        <h3>Logger Interface</h3>
+<pre><code class="">interface LoggerInterface
+{
+    public function emergency($message, array $context = array());
+
+    public function alert($message, array $context = array());
+
+    public function critical($message, array $context = array());
+
+    public function error($message, array $context = array());
+
+    public function warning($message, array $context = array());
+
+    public function notice($message, array $context = array());
+
+    public function info($message, array $context = array());
+
+    public function debug($message, array $context = array());
+
+    public function log($level, $message, array $context = array());
+}</code></pre>
                     </section>
                     <section>
-                        ---
+                        <h3>Monolog</h3>
+                        <a href="https://github.com/Seldaek/monolog">https://github.com/Seldaek/monolog</a>
+                    </section>
+                    <section>
+                        <h3>А если нет поддержки PSR 3?</h3>
+                    </section>
+                    <section>
+                        <h3>Используем адаптер</h3>
+                        <a href="https://github.com/samdark/yii2-psr-log-target">https://github.com/samdark/yii2-psr-log-target</a>
                     </section>
                 </section>
                 <!-- ======================================================================================= -->
@@ -203,7 +232,7 @@
                 <!-- ======================================================================================= -->
                 <section>
                     <section>
-                        <h2><s>PSR 0</s> / PSR 4</h2>
+                        <h2><s style="color: #9f9f9f">PSR 0</s> / PSR 4</h2>
                         <h3>Autoloading Standard</h3>
                     </section>
                     <section>
