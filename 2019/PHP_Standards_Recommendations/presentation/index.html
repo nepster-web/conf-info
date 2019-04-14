@@ -125,7 +125,7 @@
                 <!-- ======================================================================================= -->
                 <section>
                     <img src="images/php-fig.jpeg" alt="" />
-                    <h3>Первый стандарт в 2010 году</h3>
+                    <h3>Первый стандарт принят в 2010 году</h3>
                     <p>&nbsp;</p>
                 </section>
                 <!-- ======================================================================================= -->
@@ -296,7 +296,7 @@ spl_autoload_register('autoload');</code></pre>
                     </section>
                     <section>
                         <h2>Composer</h2>
-                        <a href="https://getcomposer.org/">https://getcomposer.org/</a>
+                        <a href="https://getcomposer.org">https://getcomposer.org</a>
                     </section>
                     <section>
                         <h2>Composer Autoloading</h2>
@@ -349,8 +349,12 @@ spl_autoload_register('autoload');</code></pre>
                         <a href="https://www.php-fig.org/psr/psr-6/">https://www.php-fig.org/psr/psr-6/</a>
                     </section>
                     <section>
-                        <h2>Symfony Cache Component</h2>
+                        <h2>Symfony Cache</h2>
                         <a href="https://github.com/symfony/cache">https://github.com/symfony/cache</a>
+                    </section>
+                    <section>
+                        <h2>Zend Cache</h2>
+                        <a href="https://github.com/zendframework/zend-cache">https://github.com/zendframework/zend-cache</a>
                     </section>
                 </section>
                 <!-- ======================================================================================= -->
@@ -404,7 +408,7 @@ spl_autoload_register('autoload');</code></pre>
                         </ul>
                         <pre><code>class HomePageHandlerFactory
 {
-    public function __invoke(ContainerInterface $container) : RequestHandlerInterface
+    public function __invoke(ContainerInterface $container): RequestHandlerInterface
     {
         $router   = $container->get(RouterInterface::class);
         $template = $container->has(TemplateRendererInterface::class)
@@ -414,8 +418,14 @@ spl_autoload_register('autoload');</code></pre>
     }
 }</code></pre>
                     </section>
-
-
+                    <section>
+                        <h2>Zend DI</h2>
+                        <a href="https://github.com/zendframework/zend-di">https://github.com/zendframework/zend-di</a>
+                    </section>
+                    <section>
+                        <h2>Symfony DI</h2>
+                        <a href="https://github.com/symfony/dependency-injection">https://github.com/symfony/dependency-injection</a>
+                    </section>
                 </section>
                 <!-- ======================================================================================= -->
 
@@ -497,7 +507,7 @@ spl_autoload_register('autoload');</code></pre>
                 <!-- ======================================================================================= -->
                 <section>
                     <h2>PSR - рекомендации</h2>
-                    <h3>А не жесткие правила</h3>
+                    <h3>а не жесткие правила</h3>
                 </section>
                 <!-- ======================================================================================= -->
 
