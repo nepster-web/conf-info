@@ -43,11 +43,11 @@
                         </small>
                     </p>
                     <p>
-                        <a href="https://github.com/nepster-web/conf-info/tree/master/2019/PHP_Standards_Recommendations">
-                            https://github.com/nepster-web
+                        <a href="https://slides.nepster.pro/2019/PHP_Standards_Recommendations/presentation/index.html">
+                            https://slides.nepster.pro
                         </a>
                         <br>
-                        <img src="images/qr/url_to_conf_repository.png" alt="" />
+                        <img src="images/qr/url_to_conf_repository.png" alt="" style="max-width: 300px" />
                     </p>
                 </section>
                 <!-- ======================================================================================= -->
@@ -101,7 +101,7 @@
 
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>PSR</h2>
+                    <h1>PSR</h1>
                     <h4>Чуть больше, чем стиль оформления кода</h4>
                 </section>
                 <!-- ======================================================================================= -->
@@ -111,6 +111,22 @@
                     <img src="images/php-fig.jpeg" alt="" />
                     <h3>Framework Interoperability Group</h3>
                     <p><a href="https://www.php-fig.org/">https://php-fig.org</a></p>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <img src="images/php-fig.jpeg" alt="" />
+                    <h3>Группа была основана в 2009 году</h3>
+                    <p>&nbsp;</p>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <img src="images/php-fig.jpeg" alt="" />
+                    <h3>Первый стандарт в 2010 году</h3>
+                    <p>&nbsp;</p>
                 </section>
                 <!-- ======================================================================================= -->
 
@@ -143,14 +159,14 @@
 
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>В PHP-FIG обсуждают новый стандарт</h2>
+                    <h3>PHP-FIG обсуждают новый стандарт</h3>
                     <img src="images/battle.jpg" alt="" />
                 </section>
                 <!-- ======================================================================================= -->
 
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>Стандарты</h2>
+                    <h1>Стандарты</h1>
                     <h3>Это - полезно!</h3>
                     <ul>
                         <li class="fragment">Понимание</li>
@@ -162,7 +178,7 @@
 
                 <!-- ======================================================================================= -->
                 <section>
-                    <h2>Обзор PSR</h2>
+                    <h1>Обзор PSR</h1>
                     <a href="https://www.php-fig.org/psr/">https://www.php-fig.org/psr/</a>
                 </section>
                 <!-- ======================================================================================= -->
@@ -220,10 +236,10 @@
                         <a href="https://github.com/Seldaek/monolog">https://github.com/Seldaek/monolog</a>
                     </section>
                     <section>
-                        <h3>А если нет поддержки PSR 3?</h3>
+                        <h2>Нет поддержки PSR 3?</h2>
                     </section>
                     <section>
-                        <h3>Используем адаптер</h3>
+                        <h2>Используем адаптер</h2>
                         <a href="https://github.com/samdark/yii2-psr-log-target">https://github.com/samdark/yii2-psr-log-target</a>
                     </section>
                 </section>
@@ -236,10 +252,60 @@
                         <h3>Autoloading Standard</h3>
                     </section>
                     <section>
-                        ---
+                        <h2>Оо ???</h2>
+                        <pre><code>class MyLib {
+
+    private $CI;
+
+    public function __construct()
+    {
+        $this->CI = &get_instance();
+
+        $this->CI->load->library('encrypt');
+        $this->CI->load->library('session');
+        $this->CI->load->library('url');
+
+        $this->CI->load->helper('captcha');
+        $this->CI->load->helper('cookie');
+        $this->CI->load->helper('email');
+    }
+
+    ...
+
+}</code></pre>
                     </section>
                     <section>
-                        ---
+                        <h2><s style="color: #9f9f9f">PSR 0</s></h2>
+                        <h3>Deprecated с 2014 года</h3>
+                        <pre><code>function autoload($className)
+{
+    $className = ltrim($className, '\\');
+    $fileName  = '';
+    $namespace = '';
+    if ($lastNsPos = strrpos($className, '\\')) {
+        $namespace = substr($className, 0, $lastNsPos);
+        $className = substr($className, $lastNsPos + 1);
+        $fileName  = str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
+    }
+    $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
+
+    require $fileName;
+}
+
+spl_autoload_register('autoload');</code></pre>
+                    </section>
+                    <section>
+                        <h2>Composer</h2>
+                        <a href="https://getcomposer.org/">https://getcomposer.org/</a>
+                    </section>
+                    <section>
+                        <h2>Composer Autoloading</h2>
+                        <pre><code>"autoload": {
+        "psr-4": {
+            "Acme\\": "src/"
+        }
+    }
+}</code></pre>
                     </section>
                 </section>
                 <!-- ======================================================================================= -->
@@ -247,14 +313,44 @@
                 <!-- ======================================================================================= -->
                 <section>
                     <section>
-                        <h2>PSR 6</h2>
+                        <h2>PSR 6 / PSR 16</h2>
                         <h3>Caching Interface</h3>
+                        <h3>Simple Caching Interface</h3>
                     </section>
                     <section>
-                        ---
+                        <h2>PSR 16</h2>
+                        <h3>Simple Caching Interface</h3>
+                        <pre><code>interface CacheInterface
+{
+    public function get($key, $default = null);
+
+    public function set($key, $value, $ttl = null);
+
+    public function delete($key);
+
+    public function clear();
+
+    public function getMultiple($keys, $default = null);
+
+    public function setMultiple($values, $ttl = null);
+
+    public function deleteMultiple($keys);
+
+    public function has($key);
+}</code></pre>
                     </section>
                     <section>
-                        ---
+                        <h2>PSR 6</h2>
+                        <ul>
+                            <li>CacheItemInterface</li>
+                            <li>CacheItemPoolInterface</li>
+                        </ul>
+                        <br>
+                        <a href="https://www.php-fig.org/psr/psr-6/">https://www.php-fig.org/psr/psr-6/</a>
+                    </section>
+                    <section>
+                        <h2>Symfony Cache Component</h2>
+                        <a href="https://github.com/symfony/cache">https://github.com/symfony/cache</a>
                     </section>
                 </section>
                 <!-- ======================================================================================= -->
@@ -266,10 +362,17 @@
                         <h3>HTTP Message Interface</h3>
                     </section>
                     <section>
-                        ---
+                        <h2>Zend Diactoros</h2>
+                        <h4>PSR-7 HTTP message implementations</h4>
+                        <a href="https://github.com/zendframework/zend-diactoros">https://github.com/zendframework/zend-diactoros</a>
                     </section>
                     <section>
-                        ---
+                        <h2>Guzzle и PSR-7</h2>
+                        <a href="http://docs.guzzlephp.org/en/stable/psr7.html">http://docs.guzzlephp.org/en/stable/psr7.html</a>
+                    </section>
+                    <section>
+                        <h2>HttpFoundation и PSR-7</h2>
+                        <a href="https://github.com/symfony/psr-http-message-bridge">https://github.com/symfony/psr-http-message-bridge</a>
                     </section>
                 </section>
                 <!-- ======================================================================================= -->
@@ -281,11 +384,38 @@
                         <h3>Container Interface</h3>
                     </section>
                     <section>
-                        ---
+                        <h2>Container Interface</h2>
+                        <pre><code>interface ContainerInterface
+{
+    public function get($id);
+
+    public function has($id);
+}</code></pre>
                     </section>
                     <section>
-                        ---
+                        <h2>Zend Expressive</h2>
+                        <a href="https://docs.zendframework.com/zend-expressive/">https://docs.zendframework.com/zend-expressive/</a>
                     </section>
+                    <section>
+                        <h2>Пример работы PSR 11</h2>
+                        <ul>
+                            <li>HomePageHandler.php</li>
+                            <li>HomePageHandlerFactory.php</li>
+                        </ul>
+                        <pre><code>class HomePageHandlerFactory
+{
+    public function __invoke(ContainerInterface $container) : RequestHandlerInterface
+    {
+        $router   = $container->get(RouterInterface::class);
+        $template = $container->has(TemplateRendererInterface::class)
+            ? $container->get(TemplateRendererInterface::class)
+            : null;
+        return new HomePageHandler(get_class($container), $router, $template);
+    }
+}</code></pre>
+                    </section>
+
+
                 </section>
                 <!-- ======================================================================================= -->
 
@@ -337,21 +467,6 @@
                 <!-- ======================================================================================= -->
                 <section>
                     <section>
-                        <h2>PSR 16</h2>
-                        <h3>Simple Cache</h3>
-                    </section>
-                    <section>
-                        ---
-                    </section>
-                    <section>
-                        ---
-                    </section>
-                </section>
-                <!-- ======================================================================================= -->
-
-                <!-- ======================================================================================= -->
-                <section>
-                    <section>
                         <h2>PSR 17</h2>
                         <h3>HTTP Factories</h3>
                     </section>
@@ -379,16 +494,25 @@
                 </section>
                 <!-- ======================================================================================= -->
 
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>PSR - рекомендации</h2>
+                    <h3>А не жесткие правила</h3>
+                </section>
+                <!-- ======================================================================================= -->
 
-
-
-
-                <!--
-
-                - Выводы
-                - Используйт е стандарты
-                - Вопросы
-                -->
+                <!-- ======================================================================================= -->
+                <section>
+                    <h1>Вопросы</h1>
+                    <p>
+                        <a href="https://slides.nepster.pro/2019/PHP_Standards_Recommendations/presentation/index.html">
+                            https://slides.nepster.pro
+                        </a>
+                        <br>
+                        <img src="images/qr/url_to_conf_repository.png" alt="" style="max-width: 350px" />
+                    </p>
+                </section>
+                <!-- ======================================================================================= -->
 
             </div>
 
