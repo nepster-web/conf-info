@@ -466,13 +466,96 @@ spl_autoload_register('autoload');</code></pre>
                         <h3>HTTP Handlers</h3>
                     </section>
                     <section>
-                        ---
+                        <h2>Symfony Controller</h2>
+                        <pre><code>class DefaultController extends AbstractController
+{
+    /**
+     * @Route("/", name="homepage")
+     */
+    public function index(): Response
+    {
+        $posts = $this->getDoctrine()
+            ->getRepository(Post::class)
+            ->findLatest();
+
+        return $this->render('default/index.html.twig', [
+            'posts' => $posts,
+        ]);
+    }
+}</code></pre>
                     </section>
                     <section>
-                        https://www.php-fig.org/psr/psr-15/
-                        https://symfony.com/doc/current/controller.html
-                        https://github.com/zendframework/zend-expressive-skeleton/blob/master/src/App/src/Handler/HomePageHandler.php
-                        https://jenssegers.com/85/goodbye-controllers-hello-request-handlers
+                        <h2>Symfony Controller</h2>
+                        <pre><code>class DefaultController extends AbstractController
+{
+    public function list(): Response
+    {
+        // ...
+    }
+
+    public function update(): Response
+    {
+        // ...
+    }
+
+    public function create(): Response
+    {
+        // ...
+    }
+
+    public function delete(): Response
+    {
+        // ...
+    }
+}</code></pre>
+                    </section>
+                    <section>
+                        <h2>Goodbye Controllers</h2>
+                        <h3><a href="https://jenssegers.com/85/goodbye-controllers-hello-request-handlers">hello request handlers</a></h3>
+                    </section>
+                    <section>
+                        <h2>Request Handler</h2>
+                        <pre><code>class CreateUserHandler
+{
+    public function __construct(UserRepository $repository, Twig $twig)
+    {
+        // ...
+    }
+
+    public function __invoke(Request $request, Response $response): Response
+    {
+        // ...
+    }
+}</code></pre>
+                    </section>
+                    <section>
+                        <h2>PSR 15</h2>
+                        <pre><code>interface RequestHandlerInterface
+{
+    public function handle(ServerRequestInterface $request): ResponseInterface;
+}</code></pre>
+                        <pre><code>interface MiddlewareInterface
+{
+    public function process(
+        ServerRequestInterface $request,
+        RequestHandlerInterface $handler
+    ): ResponseInterface;
+}</code></pre>
+                    </section>
+                    <section>
+                        <h2>Zend Expressive Handler</h2>
+                        <pre><code>use Psr\Http\Message\ResponseInterface;
+use Zend\Diactoros\Response\JsonResponse;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
+
+class PingHandler implements RequestHandlerInterface
+{
+    public function handle(ServerRequestInterface $request): ResponseInterface
+    {
+        return new JsonResponse(['ack' => time()]);
+    }
+}</code></pre>
                     </section>
                 </section>
                 <!-- ======================================================================================= -->
@@ -484,10 +567,33 @@ spl_autoload_register('autoload');</code></pre>
                         <h3>HTTP Factories</h3>
                     </section>
                     <section>
-                        ---
+                        <h2>Создать Request</h2>
+                        <pre><code>use Psr\Http\Message\UriInterface;
+use Psr\Http\Message\RequestInterface;
+
+interface RequestFactoryInterface
+{
+    public function createRequest(string $method, $uri): RequestInterface;
+}</code></pre>
                     </section>
                     <section>
-                        ---
+                        <h2>Создать ServerRequest</h2>
+                        <pre><code>use Psr\Http\Message\UriInterface;
+use Psr\Http\Message\ServerRequestInterface;
+
+interface ServerRequestFactoryInterface
+{
+    public function createServerRequest(string $method, $uri, array $serverParams = []): ServerRequestInterface;
+}</code></pre>
+                    </section>
+                    <section>
+                        <h2>Создать Response</h2>
+                        <pre><code>use Psr\Http\Message\ResponseInterface;
+
+interface ResponseFactoryInterface
+{
+    public function createResponse(int $code = 200, string $reasonPhrase = ''): ResponseInterface;
+}</code></pre>
                     </section>
                 </section>
                 <!-- ======================================================================================= -->
