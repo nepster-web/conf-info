@@ -186,7 +186,7 @@
                 <!-- ======================================================================================= -->
                 <section>
                     <section>
-                        <h2>PSR 1 / PSR 2 / <span style="color: #9f9f9f">PSR 12</span></h2>
+                        <h2>PSR-1 / PSR-2 / <span style="color: #9f9f9f">PSR-12</span></h2>
                         <h3>Basic Coding Standard</h3>
                         <h3>Coding Style Guide</h3>
                         <h3 style="color: #9f9f9f">Extended Coding Style Guide</h3>
@@ -205,7 +205,7 @@
                 <!-- ======================================================================================= -->
                 <section>
                     <section>
-                        <h2>PSR 3</h2>
+                        <h2>PSR-3</h2>
                         <h3>Logger Interface</h3>
                     </section>
                     <section>
@@ -236,7 +236,7 @@
                         <a href="https://github.com/Seldaek/monolog">https://github.com/Seldaek/monolog</a>
                     </section>
                     <section>
-                        <h2>Нет поддержки PSR 3?</h2>
+                        <h2>Нет поддержки PSR-3?</h2>
                     </section>
                     <section>
                         <h2>Используем адаптер</h2>
@@ -248,7 +248,7 @@
                 <!-- ======================================================================================= -->
                 <section>
                     <section>
-                        <h2><s style="color: #9f9f9f">PSR 0</s> / PSR 4</h2>
+                        <h2><s style="color: #9f9f9f">PSR-0</s> / PSR-4</h2>
                         <h3>Autoloading Standard</h3>
                     </section>
                     <section>
@@ -275,7 +275,7 @@
 }</code></pre>
                     </section>
                     <section>
-                        <h2><s style="color: #9f9f9f">PSR 0</s></h2>
+                        <h2><s style="color: #9f9f9f">PSR-0</s></h2>
                         <h3>Deprecated с 2014 года</h3>
                         <pre><code>function autoload($className)
 {
@@ -313,12 +313,12 @@ spl_autoload_register('autoload');</code></pre>
                 <!-- ======================================================================================= -->
                 <section>
                     <section>
-                        <h2>PSR 6 / PSR 16</h2>
+                        <h2>PSR-6 / PSR-16</h2>
                         <h3>Caching Interface</h3>
                         <h3>Simple Caching Interface</h3>
                     </section>
                     <section>
-                        <h2>PSR 16</h2>
+                        <h2>PSR-16</h2>
                         <h3>Simple Caching Interface</h3>
                         <pre><code>interface CacheInterface
 {
@@ -340,7 +340,7 @@ spl_autoload_register('autoload');</code></pre>
 }</code></pre>
                     </section>
                     <section>
-                        <h2>PSR 6</h2>
+                        <h2>PSR-6</h2>
                         <ul>
                             <li>CacheItemInterface</li>
                             <li>CacheItemPoolInterface</li>
@@ -362,7 +362,7 @@ spl_autoload_register('autoload');</code></pre>
                 <!-- ======================================================================================= -->
                 <section>
                     <section>
-                        <h2>PSR 7</h2>
+                        <h2>PSR-7</h2>
                         <h3>HTTP Message Interface</h3>
                     </section>
                     <section>
@@ -384,7 +384,7 @@ spl_autoload_register('autoload');</code></pre>
                 <!-- ======================================================================================= -->
                 <section>
                     <section>
-                        <h2>PSR 11</h2>
+                        <h2>PSR-11</h2>
                         <h3>Container Interface</h3>
                     </section>
                     <section>
@@ -401,7 +401,7 @@ spl_autoload_register('autoload');</code></pre>
                         <a href="https://docs.zendframework.com/zend-expressive/">https://docs.zendframework.com/zend-expressive/</a>
                     </section>
                     <section>
-                        <h2>Пример работы PSR 11</h2>
+                        <h2>Пример работы PSR-11</h2>
                         <ul>
                             <li>HomePageHandler.php</li>
                             <li>HomePageHandlerFactory.php</li>
@@ -432,14 +432,24 @@ spl_autoload_register('autoload');</code></pre>
                 <!-- ======================================================================================= -->
                 <section>
                     <section>
-                        <h2>PSR 13</h2>
+                        <h2>PSR-13</h2>
                         <h3>Hypermedia Links</h3>
                     </section>
                     <section>
-                        ---
+                        <h3>Общий способ представления hypermedia-ссылок</h3>
                     </section>
                     <section>
-                        ---
+                        <h2>PSR-13 реализации</h2>
+                        <a href="https://github.com/blongden/hal">https://github.com/blongden/hal</a>
+                        <br>
+                        <a href="https://github.com/blongden/hal">https://github.com/Crell/HtmlModel</a>
+                    </section>
+                    <section>
+                        <h2>Hypermedia</h2>
+                        <h4>то без чего ваше API не совсем REST</h4>
+                        <a href="https://habr.com/ru/company/aligntechnology/blog/281206/">
+                            https://habr.com/ru/company/aligntechnology/blog/281206/
+                        </a>
                     </section>
                 </section>
                 <!-- ======================================================================================= -->
@@ -447,14 +457,13 @@ spl_autoload_register('autoload');</code></pre>
                 <!-- ======================================================================================= -->
                 <section>
                     <section>
-                        <h2>PSR 14</h2>
+                        <h2>PSR-14</h2>
                         <h3>Event Dispatcher</h3>
                     </section>
                     <section>
                         ---
                     </section>
                     <section>
-                        ---
                     </section>
                 </section>
                 <!-- ======================================================================================= -->
@@ -462,7 +471,7 @@ spl_autoload_register('autoload');</code></pre>
                 <!-- ======================================================================================= -->
                 <section>
                     <section>
-                        <h2>PSR 15</h2>
+                        <h2>PSR-15</h2>
                         <h3>HTTP Handlers</h3>
                     </section>
                     <section>
@@ -529,7 +538,7 @@ spl_autoload_register('autoload');</code></pre>
 }</code></pre>
                     </section>
                     <section>
-                        <h2>PSR 15</h2>
+                        <h2>PSR-15</h2>
                         <pre><code>interface RequestHandlerInterface
 {
     public function handle(ServerRequestInterface $request): ResponseInterface;
@@ -563,7 +572,7 @@ class PingHandler implements RequestHandlerInterface
                 <!-- ======================================================================================= -->
                 <section>
                     <section>
-                        <h2>PSR 17</h2>
+                        <h2>PSR-17</h2>
                         <h3>HTTP Factories</h3>
                     </section>
                     <section>
@@ -601,7 +610,7 @@ interface ResponseFactoryInterface
                 <!-- ======================================================================================= -->
                 <section>
                     <section>
-                        <h2>PSR 18</h2>
+                        <h2>PSR-18</h2>
                         <h3>HTTP Client</h3>
                     </section>
                     <section>
